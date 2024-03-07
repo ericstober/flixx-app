@@ -2,6 +2,7 @@ const global = {
   currentPage: window.location.pathname,
 };
 
+// Display 20 most popular movies
 async function displayPopularMovies() {
   const { results } = await fetchAPIData("movie/popular");
 
@@ -40,8 +41,12 @@ async function displayPopularMovies() {
 
 // Fetch data from TMDB API
 async function fetchAPIData(endpoint) {
+  // API key registered at https://www.themoviedb.org/settings/api
+  // Only use for devlopment. For production store the key and make requests from server
   const API_KEY = "7b2d525832e71dc1b4d600029324fc93";
   const API_URL = "https://api.themoviedb.org/3/";
+
+  showSpinner();
 
   const response = await fetch(
     `${API_URL}${endpoint}?api_key=${API_KEY}&language=en-US`
@@ -49,7 +54,17 @@ async function fetchAPIData(endpoint) {
 
   const data = await response.json();
 
+  hideSpinner();
+
   return data;
+}
+
+function showSpinner() {
+  document.querySelector('.spinner').classList.add('show');
+}
+
+function hideSpinner() {
+  document.querySelector('.spinner').classList.remove('show');
 }
 
 // Highlight active link
