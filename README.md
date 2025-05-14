@@ -1,6 +1,6 @@
 # Flixx App
 
-Flixx app is a dynamic web application built with vanilla JavaScript, HTML, and CSS. It leverages The Move Database (TMDD) API to display up-to-date information on movies and TV shows, including details, search functionality, and trending content.
+Flixx app is a dynamic web application built with vanilla JavaScript, HTML, and CSS. It leverages The Movie Database (TMDB) API to display up-to-date information on movies and TV shows, including details, search functionality, and trending content.
 
 ## Features
 
@@ -31,7 +31,7 @@ cd flixx-app
 
 2. **Obtain a TMDB API Key**:
 
-   - Sign up at [TMBD](https://www.themoviedb.org) and request an API key.
+   - Sign up at [TMDB](https://www.themoviedb.org) and request an API key.
 
 3. **Configure the API Key**:
    - Open the `js/script.js` file.
